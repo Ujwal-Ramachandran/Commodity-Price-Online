@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commodity Prices</title>
+</head>
+<body>
+    <div class="nav-bar" style="margin:10; padding:20px">
+            <form action="/test" method = "POST">
+                <label>Select Commodity : </label>
+                <select name="Commodity" id="Commodity" style="width:130px;">
+                    <option selected="selected" value="0">--Select--</option>
+                    <option value="137">Ajwan</option>
+                    <option value="325">Almond(Badam)</option>
+                    <option value="260">Arhar Dal(Tur Dal)</option>
+                    <option value="269">Avare Dal</option>
+                    <option value="28">Bajra(Pearl Millet/Cumbu)</option>
+                    <option value="204">Bamboo</option>
+                    <option value="29">Barley (Jau)</option>
+                    <option value="321">Bay leaf (Tejpatta)</option>
+                    <option value="262">Beaten Rice</option>
+                    <option value="263">Bengal Gram Dal (Chana Dal)</option>
+                    <option value="6">Bengal Gram(Gram)(Whole)</option>
+                    <option value="8">Black Gram (Urd Beans)(Whole)</option>
+                    <option value="264">Black Gram Dal (Urd Dal)</option>
+                    <option value="38">Black pepper</option>
+                    <option value="290">Bran</option>
+                    <option value="293">Broken Rice</option>
+                    <option value="40">Cardamoms</option>
+                    <option value="36">Cashewnuts</option>
+                    <option value="26">Chili Red</option>
+                    <option value="105">Cloves</option>
+                    <option value="138">Coconut</option>
+                    <option value="45">Coffee</option>
+                    <option value="91">Dal (Avare)</option>
+                    <option value="132">Dry Chillies</option>
+                    <option value="121">Foxtail Millet(Navane)</option>
+                    <option value="9">Green Gram (Moong)(Whole)</option>
+                    <option value="265">Green Gram Dal (Moong Dal)</option>
+                    <option value="63">Lentil (Masur)(Whole)</option>
+                    <option value="4">Maize</option>
+                    <option value="259">Masur Dal</option>
+                    <option value="237">Millets</option>
+                    <option value="106">Nutmeg</option>
+                    <option value="414">Paddy(Dhan)(Basmati)</option>
+                    <option value="2">Paddy(Dhan)(Common)</option>
+                    <option value="30">Ragi (Finger Millet)</option>
+                    <option value="7">Red Gram</option>
+                    <option value="3">Rice</option>
+                    <option value="286">Soji</option>
+                    <option value="48">Sugar</option>
+                    <option value="1">Wheat</option>
+                </select>
+                <label for="From">From : </label>
+                <input type="date" id="from" name="from">
+                <label for="To">To : </label>
+                <input type="date" id="to" name="to"> 
+                <p><input type="submit" class="sub-but" value="Submit"/></p>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1;
+    var yyyy = today.getFullYear();
+    if(dd<10){
+            dd='0'+dd
+        } 
+        if(mm<10){
+            mm='0'+mm
+        } 
+
+    today = yyyy+'-'+mm+'-'+dd;
+    document.getElementById("to").setAttribute("max", today);
+    document.getElementById("from").setAttribute("max", today);
+</script>
+</html>
